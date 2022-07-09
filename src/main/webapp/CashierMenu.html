@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+	background:#c8c8c8;
+    }
+/* The device with borders */
+.smartphone {
+  position: relative;
+  width: 360px;
+  height: 640px;
+  margin: auto;
+  border: 16px black solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The line on the top of the device */
+.smartphone:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+}
+
+/* The line on the bottom of the device */
+.smartphone:after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 5px;
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;;
+}
+
+/* The screen (or content) of the device */
+.smartphone .content {
+  width: 330px;
+  height: 500px;
+  background: #afc7d0;
+}
+header {
+ 	content: '';
+    display: block;
+    position: absolute;
+    top: 0px;
+    background-color:#5981B0;
+    font:bold 14px;
+    color:#1E88E5;
+    width: 354px;
+    height:60px;
+    padding:1%;
+}
+footer {
+ 	content: '';
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    background-color:#5981B0;
+    font:bold 14px;
+    color:#1E88E5;
+    width: 330px;
+    height:50px;
+    padding:1%;
+}
+
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #5981B0;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 5px;
+  font-size: 17px;
+  width: 33.335%;
+  height: 58px;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  width : 330.5px;
+  height: 500px;
+}
+
+#Home {background-color: #afc7d0;}
+#UpdatePrice {background-color: #afc7d0;}
+#PumpAvailability {background-color: #afc7d0;}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.button {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+/* Style the form - display items horizontally */
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+/* Add some margins for each label */
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+/* Style the input fields */
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+/* Style the submit button */
+.form-inline button {
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
+}
+
+.form-inline button:hover {
+  background-color: royalblue;
+}
+
+/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+
+
+/* zaimi's interface */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #004882;
+}
+
+.box {
+  position: absolute;
+ 
+  top: 195px;
+  left:220px;
+  transform: translate(-50%, -50%);
+}
+
+.box select {
+  background-color:#5981B0;
+  color: black;
+  padding: 12px;
+  width: 100px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.box::before {
+  content: "\f13a";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  align-items: left;
+  justify-content: left;
+  background:#fff;
+  
+}
+span{
+  position: relative;
+  display: inline-flex;
+  width: 180px;
+  height: 55px;
+  margin: 15px;
+  perspective: 1000px;
+  position:absolute;
+bottom:100px;
+ left:160px;
+  
+}
+span a{
+  font-size: 15px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform .25s;
+  font-family: monospace;
+  text-align:center;
+  font-weight : bold;
+  
+}
+span a:before,
+span a:after{
+  position: absolute;
+  content: "NON AVAILABLE";
+  height: 50px;
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 1px;
+  
+}
+span a:before{
+  color: black;
+  background: #5981B0;
+  transform: rotateY(0deg) translateZ(25px);
+}
+span a:after{
+  color: black;
+  transform: rotateX(90deg) translateZ(25px);
+}
+span a:hover{
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+pan{
+  position: relative;
+  display: inline-flex;
+  width: 180px;
+  height: 55px;
+  margin: 15px;
+  perspective: 1000px;
+  position:absolute;
+  bottom:100px;
+  left:-5px;
+  
+ 
+  
+}
+pan b{
+  font-size: 15px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform .25s;
+  font-family: monospace;
+  
+}
+pan b:before,
+pan b:after{
+  position: absolute;
+  content: "AVAILABLE";
+  height: 50px;
+  width: 140px;
+  display: flex;
+  margin-left : 15px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 1px;
+}
+pan b:before{
+  color: black;
+  background: #5981B0;
+  transform: rotateY(0deg) translateZ(25px);
+}
+pan b:after{
+  color: black;
+  transform: rotateX(90deg) translateZ(25px);
+}
+pan b:hover{
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+<div class="smartphone">
+  <div class="content">
+
+<button class="tablink" onclick="openPage('Home', this, '#afc7d0')"id="defaultOpen">Home</button>
+<button class="tablink" onclick="openPage('UpdatePrice', this, '#afc7d0')">Update Price</button>
+<button class="tablink" onclick="openPage('PumpAvailability', this, '#afc7d0')">Pump Availability</button>
+
+<div id="Home" class="tabcontent">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Ahmad Albab</h1> 
+      <p>Cashier On Duty</p> 
+      <p>CashierID #12345</p>
+      <form action="LoginInterface.jsp">
+      <button class="button">Log Out</button></form>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="UpdatePrice" class="tabcontent">
+  <h3>Petrol Price Update</h3>
+  
+<form name="form1" id="form1" action="CashierMenu.html" onsubmit="return validateForm()" method="POST">
+  Petrol Type: <select name="petrol" id="petrol">
+   <option value="" >CHOOSE ONE</option>
+    <option value="95">RON 95</option>
+    <option value="97">RON 97</option>
+    <option value="diesel">DIESEL</option>
+  </select>
+  </form>
+  <br><br>
+  <form>
+ <label for="price">Petrol Price:</label>
+  <input type="price" id="price" placeholder="Enter fuel price" name="price" required>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+</div>
+<div id="PumpAvailability" class="tabcontent">
+ <div class = "inside">
+    
+      <h2 style = "font-family:serif;font-size:28px; color:black; text-align:center;position: relative;bottom:35px;left:0px;"><b>Pump Availability</b></h2>
+   <div>
+   
+<h2 style = "font-family:monospace;font-size:28px; color:black; text-align:center;position: relative; top:0px;left:-60px;">Pump: </h2>
+
+
+  
+   
+   <div class="box">
+  <select>
+    <option value="1">1</option>
+   <option value="2">2</option>
+   <option value="3">3</option>
+   <option value="4">4</option>
+  </select>
+</div>
+
+   </select>
+   
+
+   
+   <body>
+   
+  <span><a style ="bottom:35px;left:0px;"></a></span>
+	<pan><b style ="font-family:monospace;bottom:35px;left:0px;"></pan>
+
+ 
+</body>
+   </div>
+  
+   
+    </div>
+
+</div>
+
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+function validateForm() {
+if (document.form1.petrol.selectedIndex == 0) {
+	alert("Please select one.");
+	return false;
+}
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+
+</script>
+   
+</body>
+
+    </div>
+    <footer>
+  </footer>
+  </div>
+
+</div>
+
+</body>
+</html>
+
